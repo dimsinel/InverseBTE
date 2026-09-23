@@ -3,6 +3,7 @@ data/sims/
 data/raw/
 data/processed/
 plots/
+G4Examples.jl/
 
 # Large binary files
 *.jld2
