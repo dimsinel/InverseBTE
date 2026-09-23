@@ -111,6 +111,7 @@ mkpath(sim_dir)
 init_det = SatelliteDetector(; shield = ShieldParams(10.0, 2.0, 20.0))
 sc_mesh  = build_scorers(0.5)   # 0.5 cm half-size = 1 cm³ mesh
 fna = FastNeutronAccumulator(; sensitive_vol="SensitiveVol", threshold_MeV=1.0)
+step_action(step, app) = fna(step, app)
 
 gun = G4JLGunGenerator(
     particle  = "proton",
@@ -125,7 +126,7 @@ app = G4JLApplication(
     nthreads          = N_THREADS,
     physics_type      = FTFP_BERT,
     scorers           = G4JLScoringMesh[],
-    stepaction_method = (step, app) -> fna(step, app),
+    stepaction_method = step_action,
 )
 
 configure(app)
