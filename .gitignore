@@ -1,0 +1,17 @@
+# Data & Plots (DrWatson)
+data/sims/
+data/raw/
+data/processed/
+plots/
+
+# Large binary files
+*.jld2
+*.png
+*.pdf
+
+# Local / Sync metadata
+.nextcloudsync.log
+.sync-exclude.lst
+.sync_*.db
+LocalPreferences.toml
+*~
