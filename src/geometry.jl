@@ -134,7 +134,7 @@ function construct_satellite(det::SatelliteDetector)::CxxPtr{G4VPhysicalVolume}
     h_al   = h_ta + p.t_Al * mm
     h_world = h_al + det.world_margin * cm
 
-    checkOverlaps = true
+    checkOverlaps = false
 
     # --- World ---
     sol_world = G4Box("World", h_world, h_world, h_world)

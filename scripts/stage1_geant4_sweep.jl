@@ -163,8 +163,10 @@ for (ei, E_MeV) in enumerate(E_BINS_MEV)
             continue
         end
 
-        @info "[$(run_idx)/$(total_runs)] E=$(round(E_MeV; digits=1)) MeV | \
-               Al=$(round(t_Al_mm; digits=1))mm Ta=$(round(t_Ta_mm; digits=2))mm Poly=$(round(t_Poly_mm; digits=1))mm"
+        if SMOKE_TEST || run_idx % 10 == 0 || run_idx == 1 || run_idx == total_runs
+            @info "[$(run_idx)/$(total_runs)] E=$(round(E_MeV; digits=1)) MeV | \
+                   Al=$(round(t_Al_mm; digits=1))mm Ta=$(round(t_Ta_mm; digits=2))mm Poly=$(round(t_Poly_mm; digits=1))mm"
+        end
 
         # ---- Build detector & update gun ----
         shield = ShieldParams(t_Al_mm, t_Ta_mm, t_Poly_mm)
