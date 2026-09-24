@@ -1,5 +1,9 @@
-name = "InverseBTE"
 authors = ["Ali Baba"]
+name = "InverseBTE"
+
+[compat]
+DrWatson = "2.19.1"
+julia = "1.13.0"
 
 [deps]
 CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
@@ -28,9 +32,8 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
 cuDNN = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"
 
-[sources]
-G4Examples = {path = "G4Examples.jl"}
+[extras]
+CUDA_Runtime_jll = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
 
-[compat]
-DrWatson = "2.19.1"
-julia = "1.13.0"
+[sources.G4Examples]
+path = "G4Examples.jl"
