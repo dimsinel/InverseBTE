@@ -43,7 +43,7 @@ using .Scoring
 const SMOKE_TEST = "--smoke-test" in ARGS
 
 const N_E_BINS    = SMOKE_TEST ? 5  : 30
-const N_CONFIGS   = SMOKE_TEST ? 5  : 200
+const N_CONFIGS   = SMOKE_TEST ? 5  : 2000
 const N_EVENTS    = SMOKE_TEST ? 1_000 : 10_000
 const N_THREADS   = Sys.CPU_THREADS   # Use all available CPU threads (32 on Ryzen 9 5950X)
 
